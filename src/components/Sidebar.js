@@ -24,7 +24,7 @@ const Sidebar = ({ onSelectChat }) => {
       <ul>
         {Object.keys(chats).map((chatId) => (
           <li key={chatId} onClick={() => onSelectChat(chatId)}>
-            {chats[chatId]?.[0]?.text || chatId}
+            {(chats[chatId]?.[0]?.text || chatId).replace(/^You:\s*/, "")}
           </li>
         ))}
       </ul>
